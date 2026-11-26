@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampusConnect helps students discover and join community initiatives.">
+  <title>CampusConnect | Make an Impact Together</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="CampusConnect home">
+      <span class="brand-mark">C</span><span>Campus<span class="brand-accent">Connect</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a><a href="#explore">Explore</a><a href="#communities">Communities</a>
+      <a href="#create">Create Initiative</a><a href="#dashboard">Dashboard</a><a href="#about">About</a>
+    </nav>
+    <a class="button button-small header-cta" href="#explore">Find an opportunity</a>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">STUDENT COMMUNITY • LOCAL IMPACT</p>
+        <h1>Small actions.<br><span>Stronger communities.</span></h1>
+        <p class="hero-text">Discover volunteering opportunities, meet people who care, and turn good intentions into meaningful action.</p>
+        <div class="hero-actions">
+          <a class="button" href="#explore">Explore opportunities <span>→</span></a>
+          <a class="text-link" href="#create">Start an initiative →</a>
+        </div>
+        <div class="hero-proof">
+          <div><strong id="heroEventCount">12+</strong><span>sample initiatives</span></div>
+          <div><strong>5</strong><span>impact categories</span></div>
+          <div><strong>1</strong><span>community mindset</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Community volunteering illustration">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-card-main">
+          <span class="art-icon">🌱</span><p class="art-label">THIS WEEK'S IMPACT</p>
+          <h2>Grow something<br>good together.</h2><span class="art-tag">Environment initiative</span>
+        </div>
+        <div class="floating-note note-top">✦ Every helping hand matters</div>
+        <div class="floating-note note-bottom"><span class="online-dot"></span> Community starts here</div>
+      </div>
+    </section>
+
+    <section class="stats-strip">
+      <div><strong id="statInitiatives">12</strong><span>Opportunities listed</span></div>
+      <div><strong id="statJoined">0</strong><span>Your joined activities</span></div>
+      <div><strong id="statCategories">5</strong><span>Ways to contribute</span></div>
+      <div><strong id="statGroups">4</strong><span>Student communities</span></div>
+    </section>
+
+    <section class="section section-soft" id="explore">
+      <div class="section-heading">
+        <div><p class="eyebrow">FIND YOUR WAY TO HELP</p><h2>Explore opportunities</h2>
+          <p class="section-intro">Find an initiative that matches your interests and availability.</p></div>
+        <a class="text-link" href="#create">Have an idea? Create one →</a>
+      </div>
+      <div class="filter-bar">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search by title, place or keyword" aria-label="Search initiatives"></label>
+        <select id="categoryFilter" aria-label="Filter by category">
+          <option value="All">All categories</option><option>Environment</option><option>Education</option>
+          <option>Community Support</option><option>Animal Welfare</option><option>Health Awareness</option>
+        </select>
+        <select id="sortFilter" aria-label="Sort initiatives">
+          <option value="date">Date: soonest</option><option value="title">Title: A–Z</option>
+        </select>
+      </div>
+      <p class="results-line" id="resultsLine" aria-live="polite"></p>
+      <div class="event-grid" id="eventGrid"></div>
+      <div class="empty-state hidden" id="emptyState"><span>🔎</span><h3>No opportunities found</h3><p>Try another keyword or clear your filters.</p></div>
+    </section>
+
+    <section class="section" id="communities">
+      <div class="section-heading"><div><p class="eyebrow">BETTER, TOGETHER</p><h2>Find your community</h2>
+        <p class="section-intro">Connect with students who care about the same causes.</p></div></div>
+      <div class="community-grid" id="communityGrid"></div>
+    </section>
+
+    <section class="create-band" id="create">
+      <div class="create-copy"><p class="eyebrow">HAVE AN IDEA?</p><h2>Make it happen.<br><span>Bring people together.</span></h2>
+        <p>Start a campus or neighbourhood initiative and invite others to contribute.</p>
+        <ul><li>Share your purpose</li><li>Set a date and location</li><li>Welcome volunteers</li></ul>
+      </div>
+      <form class="initiative-form" id="initiativeForm">
+        <h3>Create an initiative</h3>
+        <label>Initiative title<input name="title" required minlength="4" maxlength="70" placeholder="e.g. Campus Clean-up Drive"></label>
+        <div class="form-row">
+          <label>Category<select name="category" required><option value="">Choose category</option><option>Environment</option><option>Education</option><option>Community Support</option><option>Animal Welfare</option><option>Health Awareness</option></select></label>
+          <label>Volunteer capacity<input name="capacity" type="number" min="1" max="500" required placeholder="25"></label>
+        </div>
+        <div class="form-row">
+          <label>Date<input name="date" type="date" required></label>
+          <label>Location<input name="location" required maxlength="70" placeholder="Campus / Community Centre"></label>
+        </div>
+        <label>Description<textarea name="description" rows="3" required minlength="15" maxlength="500" placeholder="What will volunteers do?"></textarea></label>
+        <button class="button button-full" type="submit">Publish initiative <span>→</span></button>
+        <p class="form-note">Demo only: your initiative is saved in this browser.</p>
+      </form>
+    </section>
+
+    <section class="section dashboard-section" id="dashboard">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR COMMUNITY JOURNEY</p><h2>Your dashboard</h2>
+          <p class="section-intro">A quick look at the activities you have joined on this device.</p></div>
+        <button class="button button-outline button-small" id="clearDemo">Reset demo data</button>
+      </div>
+      <div class="dashboard-metrics">
+        <div class="metric-card"><span>Joined activities</span><strong id="dashJoined">0</strong><small>Across all categories</small></div>
+        <div class="metric-card"><span>Upcoming activities</span><strong id="dashUpcoming">0</strong><small>Based on event dates</small></div>
+        <div class="metric-card"><span>Completed activities</span><strong id="dashCompleted">0</strong><small>Demo date-based count</small></div>
+      </div>
+      <h3 class="subheading">Your joined initiatives</h3><div id="joinedList" class="joined-list"></div>
+    </section>
+
+    <section class="about-section section" id="about">
+      <div><p class="eyebrow">WHY CAMPUSCONNECT?</p><h2>Make volunteering easier to discover.</h2></div>
+      <div><p>CampusConnect is a student project concept designed to bring community initiatives into one simple, welcoming space. It encourages students to explore local causes, collaborate with peers and take part in meaningful activities.</p>
+        <p class="about-note">The current version is a frontend demonstration. Event data and registrations are stored locally in your browser and are not shared with other users.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand brand-footer" href="#home"><span class="brand-mark">C</span><span>Campus<span class="brand-accent">Connect</span></span></a>
+    <p>Connect. Collaborate. Contribute.</p><span>© <span id="year"></span> CampusConnect · Student project demo</span>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="event-dialog" id="eventDialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Close details">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+</body>
+</html>
