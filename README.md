@@ -63,6 +63,9 @@ The project demonstrates how HTML, CSS, and JavaScript can be combined to create
 👤 Author
 
 Waris Sharma
+Navjot Singh 
+Sahilpreet Singh 
+Taranpreet Kaur 
 BCA Cybersecurity
 
 ---
